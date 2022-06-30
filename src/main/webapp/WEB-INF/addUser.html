@@ -3,33 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Add User</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <h1>Create a User:</h1>
 
-<form method="post" th:action="@{/users}" th:object="${user}">
-  Name User:
-  <label>
-    <input type="text" th:field="*{name}" />
-  </label>
+<form th:method="POST" th:action="@{/users}" th:object="${user}">
+  <label for="name">Name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
   <br/>
-  Email User:
-  <label>
-    <input type="text" th:field="*{email}" />
-  </label>
+  <label for="email">Email: </label>
+  <input type="text" th:field="*{email}" id="email"/>
   <br/>
   <input type="submit" value="Create" />
 </form>
-
-<br/>
-
-<!-- Check if errorMessage is not null and not empty -->
-
-<!--<div th:if="${errorMessage}" th:utext="${errorMessage}"-->
-<!--     style="color:red;font-style:italic;">-->
-<!--  ...-->
-<!--</div>-->
 
 </body>
 </html>

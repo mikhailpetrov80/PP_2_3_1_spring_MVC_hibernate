@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Users List</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <h1>Users List</h1>
 <a href="/addUser">Add User</a>
-<a href="/deleteUser">Delete User</a>
 <br/><br/>
 <div>
     <table th:border="1">
@@ -18,7 +16,9 @@
             <th>Email User</th>
         </tr>
         <tr th:each="user : ${users}">
-            <td th:utext="${user.getId()}"></td>
+            <td>
+                <a th:href="@{users/{id}(id=${user.getId()})}" th:utext="${user.getId()}"></a>
+            </td>
             <td th:utext="${user.getName()}"></td>
             <td th:utext="${user.getEmail()}"></td>
         </tr>
