@@ -1,7 +1,7 @@
 package springsourse.dao;
 
 import org.springframework.stereotype.Repository;
-import springsourse.models.User;
+import springsourse.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<User> listUsers() {
+    public List<User> getListUsers() {
         return entityManager.createQuery("from User").getResultList();
     }
 

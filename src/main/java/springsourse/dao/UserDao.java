@@ -1,12 +1,12 @@
 package springsourse.dao;
 
-import springsourse.models.User;
+import springsourse.model.User;
 
 import java.util.List;
 
 public interface UserDao {
 
-    List<User> listUsers();
+    List<User> getListUsers();
 
     void addUser(User user);
 

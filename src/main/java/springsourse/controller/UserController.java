@@ -1,16 +1,16 @@
-package springsourse.controllers;
+package springsourse.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import springsourse.models.User;
+import springsourse.model.User;
 import springsourse.service.UserService;
 
 @Controller
 public class UserController {
 
-    UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping("/users")
     public String printUsers(Model userModel) {
-        userModel.addAttribute("users", userService.listUsers());
+        userModel.addAttribute("users", userService.getListUsers());
         return "users";
     }
 

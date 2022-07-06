@@ -1,12 +1,12 @@
 package springsourse.service;
 
-import springsourse.models.User;
+import springsourse.model.User;
 
 import java.util.List;
 
 public interface UserService {
 
-    List<User> listUsers();
+    List<User> getListUsers();
 
     void addUser(User user);
 

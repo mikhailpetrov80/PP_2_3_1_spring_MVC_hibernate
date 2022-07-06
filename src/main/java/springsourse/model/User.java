@@ -1,4 +1,4 @@
-package springsourse.models;
+package springsourse.model;
 
 import javax.persistence.*;
 
